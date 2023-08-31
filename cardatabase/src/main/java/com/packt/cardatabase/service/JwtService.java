@@ -29,7 +29,6 @@ public class JwtService {
 	// 요청 권한 부여 헤더에서 토큰을 가져와
 	// 토큰을 확인하고 사용자 이름을 얻음.
 	public String getAuthUser(HttpServletRequest request) {
-		System.out.println("목표표시 시작해");
 		String token = request.getHeader(HttpHeaders.AUTHORIZATION);
 		if (token != null) {
 			String user = Jwts.parserBuilder()

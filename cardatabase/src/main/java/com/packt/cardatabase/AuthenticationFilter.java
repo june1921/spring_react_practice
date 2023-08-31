@@ -28,9 +28,7 @@ public class AuthenticationFilter extends OncePerRequestFilter {
 			String jws = request.getHeader(HttpHeaders.AUTHORIZATION);
 			if(jws != null) {
 				// 토큰을 확인하고 사용자를 얻음
-				System.out.println("시작 전 :" + jws);
 				String user = jwtService.getAuthUser(request);
-				System.out.println("시작 후");
 				// 인증
 				Authentication authentication = new UsernamePasswordAuthenticationToken(user, null, java.util.Collections.emptyList());
 				
