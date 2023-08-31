@@ -1,7 +1,5 @@
 package com.packt.cardatabase.domain;
 
-import java.util.Set;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -17,7 +15,9 @@ public class Car {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	private String brand, model, color, registerNumber;
-	private int year, price; 
+	@Column(name="`year`")
+	private int year;
+	private int price; 
 	
 	public Car() {}
 	
